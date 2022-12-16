@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBF</title>
+    <script src="assets/js/talwind.js"></script>
+    <link rel="shortcut icon" href="assets/img/cbflogo.png" type="image/x-icon">
+    <!-- <h1>Ordem e Progresso</h1> -->
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="" id="home">
+    <div class="main overflow-hidden">
+        <!-- navbar --> 
+        <div class="nav fixed overflow-hidden top-0 " style="z-index: 999;">
+            <nav class="bg-blue-600 w-full h-12 sm:h-24 flex fixed">
+                <!-- white-part -->
+                    <div class="bg-white w-24 h-12 sm:h-24 sm:w-28 flex">
+                        <button id="first" onclick="showUp()" class="ml-2 sm:hidden">
+                            <hr id="o1" class=" h-1 border-transparent bg-blue-600 w-5 mt-1 transition-all duration-500 rounded-full">
+                            <hr id="t1" class=" h-1 border-transparent bg-blue-600 w-5 mt-1 transition-all duration-500 rounded-full">
+                            <hr id="th1" class=" h-1 border-transparent bg-blue-600 w-5 mt-1 transition-all duration-500 rounded-full">
+                        </button>
+                        <button id="second" onclick="Down()" class="ml-2 sm:hidden hidden">
+                            <hr id="o2" class=" h-1 border-transparent bg-blue-600 w-5 mt-1 transition-all duration-500">
+                            <hr id="t2" class=" h-1 border-transparent bg-blue-600 w-5 mt-1 transition-all duration-500">
+                            <hr id="th2" class=" h-1 border-transparent bg-blue-600 w-5 mt-1 transition-all duration-500">
+                        </button>
+                        <button>
+                            <img src="assets/img/cbflogo.png" class="h-12 sm:h-24 sm:ml-5  ml-5 mt-px" alt="">
+                        </button>
+                    </div>
+                <!-- blue-part -->
+
+                    <!-- search-bar -->
+                    <input type="search" id="searchBar" class="bg-transparent bg-gradient-to-r from-transparent via-slate-500 text-[12px] sm:text-md rounded-full h-8 sm:h-12 mt-2 sm:mt-6 w-[15rem] sm:w-[40rem] fixed right-[-50rem] placeholder:text-slate-900 pl-2 transition-all duration-700 " placeholder="Find anything..." autofocus>
+                    <!-- search-button -->
+                    <button class="h-12 sm:h-24 fixed right-2 contrast-200" onclick="searchBar()" >
+                        <img id="btn1" src="assets/img/Screenshot_2022-12-13_001830-removebg-preview.png" class="h-10 sm:h-12 " alt="">
+                    </button>
+                    <button id="btn2" class="h-12 sm:h-24 fixed right-2 contrast-200 hidden" onclick="searchBarHide()">
+                        <img src="assets/img/Screenshot_2022-12-13_001830-removebg-preview.png" class="h-10 sm:h-12 " alt="">
+                    </button>
+                    <div id="opco" class="opt hidden sm:flex mx-auto transition-all duration-500">
+                        <ul class="flex ">
+                            <a href="#about" onclick="abtcomp()" onblur="abtcompblur()"><li class="hover:text-slate-200 hover:border-b-2 rounded pt-1 text-center ml-10 text-[13px] mt-12 text-white font-semibold transition-all duration-200">About</li></a>
+                            <a href="#subscribe"><li class="hover:text-slate-200 hover:border-b-2 rounded pt-1 text-center ml-10 text-[13px] mt-12 text-white font-semibold transition-all duration-200">Subscribe</li></a>
+                            <a href="#external"><li class="hover:text-slate-200 hover:border-b-2 rounded pt-1 text-center ml-10 text-[13px] mt-12 text-white font-semibold transition-all duration-200">External Links</li></a>
+                            <a href="#feedback"><li class="hover:text-slate-200 hover:border-b-2 rounded pt-1 text-center ml-10 text-[13px] mt-12 text-white font-semibold transition-all duration-200">Feedback</li></a>
+                        </ul>
+                    </div>
+                
+            </nav>
+            <!-- options --> 
+            <div class="options bg-white border-r-2 sm:hidden h-[100vh] w-[70%] flex flex-col ml-[-20rem] mt-12 overflow-hidden transition-all duration-500 fixed"  id="options">
+                <div class="op relative bg-white" style="z-index: 1;">
+                    <ul class="text-[10px] flex justify-between mx-2 mt-2">
+                        <a onclick="about()" ><li id="li1" class="border-b-2 border-b-blue-600 transition-all duration-200">About</li></a>
+                        <a href="#contact" onclick="subscribe()" ><li id="li2" class=" border-b-blue-600 transition-all duration-200 ml-1">Subscribe</li></a>
+                        <a href="#external" onclick="external()"><li id="li3" class=" border-b-blue-600 transition-all duration-200 ml-1">External Links</li></a>
+                        <a href="#feedback" onclick="feedback()"><li id="li4" class=" border-b-blue-600 transition-all duration-200 ml-1">Feedback</li></a>
+                    </ul>
+                    <hr class="w-full mt-1">
+                </div>
+                <div class="left h-full ">
+                    <!-- About --> 
+                    <div id="abt" class="about mx-auto transition-all duration-700 relative" style="z-index: 0;" >
+                        <div class="logo bg-white h-24 w-24 mx-auto rounded-full mt-10"><img src="assets/img/cbflogo.png" class="mx-auto h-24 pt-2 pb-2" alt=""></div>
+                        <h1 class="text-blue-600 font-bold text-[12px] text-center">Brazilian Football Confederation</h1>
+                        <p class="text-[10px] text-center mx-10">The Brazilian Football Confederation is the governing body of football in Brazil. It was founded on Monday, 8 June 1914, as Federação Brasileira de Sports, and renamed Confederação Brasileira de Desportos in 1916.</p>
+                    </div>
+                    <!-- Contact -->
+                    <div id="sbc" class="contact h-full  transition-all duration-700 relative flex flex-col bg-white hidden">
+                        <form action="" class="flex flex-col items-center mt-28">
+                            <input id="email" type="email" class="bg-blue-500 rounded-md placeholder:text-[10px] text-[10px] h-5 w-[60%] mt-10 pl-2 placeholder:text-white text-white border-2 border-blue-300" autofocus placeholder="Enter your Email ID...">
+                            <button class="bg-blue-500 rounded-md text-[10px] font-bold text-white h-5 w-[60%] mt-2 " onclick="mess()">Subscribe</button>
+                        </form>
+                    </div>
+                    <!-- External Links -->
+                    <div id="ext" class="external bg-white h-full relative hidden transition-all duration-700 flex justify-between mx-8 mt-36">
+                        <a href="https://www.instagram.com/cbf_futebol/?hl=en"><span><img src="assets/img/insta.png" class="h-6" alt="Instagram"></span></a>
+                        <a href="https://twitter.com/search?q=%23cbf"><span><img src="assets/img/twitter.png" class="h-6" alt="Twitter"></span></a>
+                        <a href="https://www.facebook.com/CBF/"><span><img src="assets/img/facebook.png" class="h-6" alt="Facebook"></span></a>
+                        <a href="index.html"><span><img src="assets/img/web.png" class="h-6" alt="Website"></span></a>
+                        <a href="https://www.linkedin.com/company/cbf-futebol"><span><img src="assets/img/linkedin.png" class="h-6" alt="linkedin"></span></a>
+    
+    
+    
+                    </div>
+                    <!-- Feedback -->
+                    <div id="fbk" class="Feedback bg-WHITE h-full hidden transition-all duration-700 relative">
+                        <form action="" class="flex flex-col items-center mt-28">
+                            <input type="text" class="bg-blue-500 rounded-md placeholder:text-[10px] text-[10px] h-20 w-[60%] mt-10 pl-2 placeholder:text-white text-white border-2 border-blue-300" required  placeholder="Type your feedback here...">
+                            <button class="bg-blue-500 rounded-md text-[10px] font-bold text-white h-5 w-[60%] mt-2" onclick="alert('Thanks for your feedback!!')">Send</button>
+                        </form>
+                    </div>
+                    <p class="text-center font-mono text-[10px] mt-[31rem]">© 2022 CBF All rights reserved</p>
+                </div>
+
+
+                
+            </div>
+            
+            <!-- options in comp -->
+            <div class="opcomp mt-24 shadow-xl hidden sm:flex">
+                <div id="abtcomp" class="about bg-white h-72  -mt-[20rem] sm:flex w-screen transition-all duration-500 border-b-2">
+                    <img src="assets/img/cbflogo.png" class="h-[80%] mt-5 ml-24" alt="">
+                    <div class="text mx-96 mt-8">
+                        <h1 class="text-blue-600 font-bold text-xl -ml-[4rem] mt-8">Brazilian Football Confederation</h1>
+                        <p class="text-sm mt-12 -ml-[4rem]">The Brazilian Football Confederation is the governing body of football in Brazil. It was founded on Monday, 8 June 1914, as Federação Brasileira de Sports, and renamed Confederação Brasileira de Desportos in 1916.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- content -->
+
+        <div id="content" class="content w-screen h-full relative mt-[5rem] sm:mt-0 transition-all duration-500" style="z-index: 1;">
+            <div class="image">
+                <img src="assets/img/all players.png" class="sm:h-[50rem] mx-auto sm:mt-36 h-52 mt-5" alt="">
+            </div>
+            
+            
+
+            <!-- Showcase -->
+            <div class="ach">
+                <hr class="mt-5">
+                <h1 class="sm:text-[3rem] text-xl font-bold text-blue-600 text-center sm:mt-20 ">Showcase</h1>
+                <div class="Showcase sm:h-96 border-4 border-blue-600 sm:flex block mt-5 w-[70%] sm:w-[100%] mx-auto">
+                    <div class="first sm:w-[25%] w-[100%]  sm:brightness-50 sm:hover:brightness-110 transition-all duration-200 sm:border-b-0 border-r-0 border-b-2 h-52 sm:h-96">
+                        <a href="https://en.wikipedia.org/wiki/FIFA_World_Cup_Trophy#Jules_Rimet_Trophy"><img src="assets/img/NicePng_world-cup-trophy-png_1080979-removebg-preview.png" class="h-[60%] sm:mt-12 mx-auto mt-10" alt=""></a>
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Jules Rimet Trophy</p>
+                        <p class="text-center sm:text-sm text-[10px]">1958, 1962, 1970</p>
+                    </div>
+                    <div class="second sm:w-[25%] w-[100%]  sm:brightness-50 sm:hover:brightness-110 transition-all duration-200 border-b-2 h-52 sm:border-b-0 border-r-0 sm:h-96">
+                        <a href="https://en.wikipedia.org/wiki/FIFA_World_Cup_Trophy#New_trophy"><img src="assets/img/wc-removebg-preview.png" class="h-[60%] sm:mt-12 mx-auto mt-10" alt=""></a>
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Fifa World Cup Trophy</p>
+                        <p class="text-center sm:text-sm text-[10px]">1994, 2002</p>
+                    </div>
+                    <div class="third sm:w-[25%] w-[100%]  sm:brightness-50 sm:hover:brightness-110 transition-all duration-200 border-b-2 h-52 sm:border-b-0 border-r-0 sm:h-96">
+                        <a href="https://en.wikipedia.org/wiki/Copa_Am%C3%A9rica"><img src="assets/img/copa_america-removebg-preview.png" class="h-[60%] sm:mt-12 mx-auto mt-10" alt=""></a>
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Copa America Trophy</p>
+                        <p class="text-center sm:text-sm text-[10px]">1919, 1922, 1949, 1989, 1997, 1999, 2004, 2007, 2019</p>
+                    </div>
+                    <div class="fourth sm:w-[25%] w-[100%]  sm:brightness-50 sm:hover:brightness-110 transition-all duration-200 border-b-2 h-52 sm:border-b-0 border-r-0 sm:h-96">
+                        <a href="https://en.wikipedia.org/wiki/CONCACAF_Gold_Cup"><img src="assets/img/concaf-removebg-preview.png" class="h-[60%] sm:mt-12 mx-auto mt-10" alt=""></a>
+                        <p class="text-center sm:text-sm text-[10px] mt-5">CONCACAF Gold Cup Trophy (Runners Up)</p>
+                        <p class="text-center sm:text-sm text-[10px]">1996, 2003</p>
+                    </div>
+                </div>
+                <hr class="mt-12">
+            </div>
+
+            <!-- players -->
+
+            <div class="players">
+                <h1 class="sm:text-[3rem] text-xl font-bold text-blue-600 text-center sm:mt-20 ">Players</h1>
+                <div class="images flex flex-wrap mx-5 sm:mx-20 justify-around mt-5 sm:mt-12 sm:gap-8 gap-5">
+                    <div class="1 ">
+                        <img src="assets/img/players/allison.jpg" class="h-24 sm:h-48 rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Alisson</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/wewerton.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Weverton</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/ederson.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Ederson</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/bremer.jpg" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Bremer</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/miltao.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Eder Militao</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/marqinhos.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Marquinhos</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/silva.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Thiago Silva</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/danilo.jpg" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Danilo</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/daniel alves.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Daniel Alves</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/sandro.jpg" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Alex Sandro</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/telles.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Alex Telles</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/Guimaraes.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Bruno Guimaraes</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/casemiro.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Casemiro</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/Ribeiro.jpg" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Everton Ribeiro</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/Fabinho.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Fabinho</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/Fred.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Fred</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/Paqueta.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Lucas Paqueta</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/Antony.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Antony</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/Jesus.jpg" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Gabriel Jesus</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/Martinelli.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Gabriel Martinelli</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/Neymar.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Neymar Jr</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/pedro.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Pedro</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/raphinha.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Raphinha</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/Richarlison.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Richarlison</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/rodrygo.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Rodrygo</p>
+                    </div>
+                    <div class="1 ">
+                        <img src="assets/img/players/Vinicius.jfif" class="h-24 sm:h-48 mx-auto sm:mx-auto rounded-full mt-5 sm:hover:-translate-y-5 transition-all duration-200 sm:border-4 border-2 border-blue-200" alt="">
+                        <p class="text-center sm:text-sm text-[10px] mt-5">Vinicius Jr</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="mt-12">
+
+            <!-- news -->
+            <div class="news overflow-x-scroll sm:flex gap-5 mt-10 mb-10">
+                <div class="1 bg-white border-2 border-slate-200 h-80 w-72 mx-auto sm:mx-0 sm:h-[25rem] sm:w-96 overflow-hidden">
+                    <div class="h-36 w-64 mt-5 sm:w-[90%] sm:h-48 mx-auto border-2 overflow-hidden">
+                        <img src="assets/img/players sed.png" class="scale-125 hover:scale-150 mt-3 hover:rotate-[3deg] transition-all duration-700" alt="">
+                    </div>
+                    <div class="text ml-5 mr-6 h-full">
+                        <h1 class="text-sm text-blue-600 sm:text-lg font-bold mt-5">Brazil knocked out of 2022 World  Cup</h1>
+                        <p class="mt-2 text-[12px] sm:text-[16px]">Brazil have been knocked out of the 2022 World Cup after losing a quarter-final shootout against 2018 runners-up Croatia.</p>
+                    </div>
+                </div>    
+                
+                <div class="2 bg-white border-2 border-slate-200 h-80 w-72 mx-auto sm:mx-0 sm:h-[25rem] sm:w-96 overflow-hidden">
+                    <div class="h-36 w-64 mt-5 sm:w-[90%] sm:h-48 mx-auto border-2 overflow-hidden">
+                        <img src="assets/img/tite.jpg" class="scale-125 hover:scale-150 mt-3 hover:rotate-[3deg] transition-all duration-700" alt="">
+                    </div>
+                    <div class="text ml-5 mr-6 h-full">
+                        <h1 class="text-sm text-blue-600 sm:text-lg font-bold mt-5">Brazil chiefs 'set to contact Pep Guardiola' as Tite steps down.</h1>
+                        <p class="mt-2 text-[12px] sm:text-[16px]">Pep Guardiola may have signed a new contract with Manchester City last month.</p>
+                    </div>
+                </div>
+        
+                <div class="3 bg-white border-2 border-slate-200 h-80 w-72 mx-auto sm:mx-0 sm:h-[25rem] sm:w-96 overflow-hidden">
+                    <div class="h-36 w-64 mt-5 sm:w-[90%] sm:h-48 mx-auto border-2 overflow-hidden">
+                        <img src="assets/img/pele.jpg" class="scale-125 hover:scale-150 mt-3 hover:rotate-[3deg] transition-all duration-700" alt="">
+                    </div>
+                    <div class="text ml-5 mr-6 h-full">
+                        <h1 class="text-sm text-blue-600 sm:text-lg font-bold mt-5">Pelé remains in hospital: latest news about his status, live updates</h1>
+                        <p class="mt-2 text-[12px] sm:text-[16px]">The Brazilian legend has been contending with health issues, including continuing cancer treatments for years, and most recently a respiratory infection</p>
+                    </div>
+                </div>
+        
+                <div class="4 bg-white border-2 border-slate-200 h-80 w-72 mx-auto sm:mx-0 sm:h-[25rem] sm:w-96 overflow-hidden">
+                    <div class="h-36 w-64 mt-5 sm:w-[90%] sm:h-48 mx-auto border-2 overflow-hidden">
+                        <img src="assets/img/jesus inj.png" class="scale-125 hover:scale-150 mt-3 hover:rotate-[3deg] transition-all duration-700" alt="">
+                    </div>
+                    <div class="text ml-5 mr-6 h-full">
+                        <h1 class="text-sm text-blue-600 sm:text-lg font-bold mt-5">Brazil’s Jesus and Telles out of World Cup with injuries</h1>
+                        <p class="mt-2 text-[12px] sm:text-[16px]">Gabriel Jesus and Alex Telles have been ruled out of the rest of the World Cup with knee injuries, the Brazil team announced on Saturday.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="footer relative b-0">
+            <footer class="bg-slate-900 h-80 hidden sm:flex">
+                <div class="left h-full w-[20%] bg-white">
+                    <img src="assets/img/cbflogo.png" class="h-52 -mt-10 mx-auto shadow-lg" alt="">
+                    <h2 class="text-blue-600 font-bold text-center text-sm mt-10">Brazilian Football Confederation</h2>
+                </div>
+                
+                <div class="h-full w-[30%] ml-[43rem]" >
+                    <!-- subscribe -->
+                    <form action="" id="subscribe">
+                        <input type="email" class="bg-blue-600 mx-24 h-8 rounded-lg w-[60%] mt-8 pl-2 placeholder:text-white placeholder:text-[12px] text-[12px] border-2 border-blue-400" id="mail" placeholder="Enter Your Email ID...">
+                        <button class="bg-blue-600 mx-24 h-8 rounded-lg w-[60%] mt-6 pl-2 font-bold text-white border-2 border-blue-400 text-sm hover:bg-white hover:text-blue-600 transition-all duration-700" onclick="messs()">SUBSCRIBE</button>
+                    </form>
+                    <!-- feedback -->
+                    <form action="" id="feedback">
+                        <input type="text" class="bg-blue-600 mx-24 h-24 rounded-lg w-[60%] mt-8 pl-2 placeholder:text-white placeholder:text-[12px] text-[12px] border-2 border-blue-400" required placeholder="Write Your Feedback to US...">
+                        <button class="bg-blue-600 mx-24 h-8 rounded-lg w-[60%] mt-6 pl-2 font-bold text-white border-2 border-blue-400 text-sm hover:bg-white hover:text-blue-600 transition-all duration-700" onclick="alert('Thanks for your feedback!!')">SEND</button>
+                    </form>
+                    <!-- external -->
+                    <div id="external" class="ext flex justify-between w-[12rem] -mt-8 -ml-36">
+                        <a href="https://www.instagram.com/cbf_futebol/?hl=en"><img src="assets/img/277-2773517_instagram-png-white.png" class="h-6 brightness-50 hover:brightness-100 transition-all duration-200" alt=""></a>
+                        <a href="https://twitter.com/search?q=%23cbf"><img src="assets/img/twi-removebg-preview.png" class="h-6 brightness-50 hover:brightness-100 transition-all duration-200" alt=""></a>
+                        <a href="index.html"><img src="assets/img/pngfind.com-hover-icon-png-4333068.png" class="h-6 brightness-50 hover:brightness-100 transition-all duration-200" alt=""></a>
+                        <a href="https://www.facebook.com/CBF/"><img src="assets/img/505-5053860_facebook-logo-white-white-f-facebook-logo-hd-removebg-preview.png" class="h-6 brightness-50 hover:brightness-100 transition-all duration-200" alt=""></a>
+                        <a href="https://www.linkedin.com/company/cbf-futebol"><img src="assets/img/651-6512070_linkedin-icon-png-black-square-clipart-png-download-removebg-preview.png" class="h-6 brightness-50 hover:brightness-100 transition-all duration-200" alt=""></a>
+                    </div>
+                    <div class="mr-[30rem]">
+                        <p class="text-white text-[13px] -mt-[15rem] -ml-[40rem]"> <span class="text-[18px] text-blue-600 font-bold">Confederação Brasileira de Futebol</span> <br>
+                            The CBF has its headquarters in Rio de Janeiro.[2] The confederation owns a training center, named Granja Comary, located in Teresópolis.[3]
+
+                            It was announced on 29 September 2007, that the CBF would launch a women's league and cup competition in October 2007 following pressure from FIFA president Sepp Blatter during the 2007 FIFA Women's World Cup in China.</p>
+                    </div>
+                    <h1 class="text-white text-[10px] -ml-[23rem] mt-[7.5rem]">© 2022 CBF All rights reserved</h1>
+                </div>
+
+                
+                
+            </footer>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
